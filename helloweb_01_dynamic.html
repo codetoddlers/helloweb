@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script language="javascript">
+        function exponent(){
+            var baseValue = document.getElementById("base").value;
+            var powerValue = document.getElementById("power").value;
+            var resultValue = calculateExponent(baseValue,powerValue);
+            alert("Hello! the exponential form of " + baseValue + " ^ " + powerValue + " = " +resultValue );
+            document.getElementById("result").innerHTML= resultValue;
+        }
+        function calculateExponent(base, power){
+            var result = 1;
+            var raiseTill = 1;
+            while(raiseTill <= power){
+            result = result * base;
+            raiseTill++;
+            }
+            return result;
+        }
+    </script>
+</head>
+    <body>
+        <form method="GET" action="./arithmetic.html">
+            Base<input type="text" id="base" name="base">Power<input type="text" id="power" name="power">
+            <input type="button" value="Find exponent" name="Find exponent" onClick="exponent()">
+            <div id="result">Result</div>
+        </form>
+    </body>
+</html>
